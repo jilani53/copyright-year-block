@@ -16,6 +16,12 @@
     },
     "startingYear": {
       "type": "string"
+    },
+    "containerBg": {
+      "type": "string"
+    },
+    "containerColor": {
+      "type": "string"
     }
   },
   "supports": {

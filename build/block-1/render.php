@@ -28,8 +28,8 @@ $current_year = date( "Y" );
 		$display_date = $current_year;
 	} ?>
 
-	<div class="hello-1">
-		<p <?php echo get_block_wrapper_attributes() ?>>© <?php echo esc_html( $display_date ) ?></p>
+	<div class="hello-1" style="background: <?php echo esc_attr( $attributes['containerBg'] ); ?>">
+		<p <?php echo get_block_wrapper_attributes() ?> style="color: <?php echo esc_attr( $attributes['containerColor'] ); ?>">© <?php echo esc_html( $display_date ) ?></p>
 	</div>
 
 	<?php

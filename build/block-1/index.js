@@ -78,7 +78,9 @@ function Edit({
   const {
     fallbackCurrentYear,
     showStartingYear,
-    startingYear
+    startingYear,
+    containerBg,
+    containerColor
   } = attributes;
 
   // Get the current year and make sure it's a string.
@@ -103,7 +105,23 @@ function Edit({
   }
   return (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.InspectorControls, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.PanelBody, {
     title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Settings', 'copyright-year-block')
-  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.ToggleControl, {
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.ColorPicker, {
+    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Container Background Color', 'copyright-year-block'),
+    color: containerBg,
+    onChange: value => setAttributes({
+      containerBg: value
+    }),
+    enableAlpha: false,
+    defaultValue: "#000"
+  }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.ColorPicker, {
+    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Container Color', 'copyright-year-block'),
+    color: containerColor,
+    onChange: value => setAttributes({
+      containerColor: value
+    }),
+    enableAlpha: false,
+    defaultValue: "#fff"
+  }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.ToggleControl, {
     checked: showStartingYear,
     label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Show starting year', 'copyright-year-block'),
     onChange: () => setAttributes({
@@ -116,9 +134,15 @@ function Edit({
       startingYear: value
     })
   }))), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
-    className: "hello-1"
+    className: "hello-1",
+    style: {
+      background: containerBg
+    }
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("p", {
-    ...(0,_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.useBlockProps)()
+    ...(0,_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.useBlockProps)(),
+    style: {
+      color: containerColor
+    }
   }, "\xA9 ", displayDate)));
 }
 
@@ -322,7 +346,7 @@ module.exports = window["wp"]["i18n"];
   \********************************/
 /***/ ((module) => {
 
-module.exports = /*#__PURE__*/JSON.parse('{"$schema":"https://schemas.wp.org/trunk/block.json","apiVersion":3,"name":"create-block/copyright-year-block-1","version":"0.1.0","title":"Copyright Year Block 1","category":"widgets","description":"Display your site\'s copyright date.","example":{},"attributes":{"fallbackCurrentYear":{"type":"string"},"showStartingYear":{"type":"boolean"},"startingYear":{"type":"string"}},"supports":{"color":{"background":false,"text":true},"html":false,"typography":{"fontSize":true}},"textdomain":"copyright-year-block","editorScript":"file:./index.js","editorStyle":"file:./index.css","style":"file:./style-index.css","render":"file:./render.php"}');
+module.exports = /*#__PURE__*/JSON.parse('{"$schema":"https://schemas.wp.org/trunk/block.json","apiVersion":3,"name":"create-block/copyright-year-block-1","version":"0.1.0","title":"Copyright Year Block 1","category":"widgets","description":"Display your site\'s copyright date.","example":{},"attributes":{"fallbackCurrentYear":{"type":"string"},"showStartingYear":{"type":"boolean"},"startingYear":{"type":"string"},"containerBg":{"type":"string"},"containerColor":{"type":"string"}},"supports":{"color":{"background":false,"text":true},"html":false,"typography":{"fontSize":true}},"textdomain":"copyright-year-block","editorScript":"file:./index.js","editorStyle":"file:./index.css","style":"file:./style-index.css","render":"file:./render.php"}');
 
 /***/ })
 

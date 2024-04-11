@@ -26,7 +26,7 @@ import { InspectorControls, useBlockProps } from '@wordpress/block-editor';
  * @see https://developer.wordpress.org/block-editor/reference-guides/components/text-control/
  * @see https://developer.wordpress.org/block-editor/reference-guides/components/toggle-control/
  */
-import { PanelBody, TextControl, ToggleControl, TextareaControl } from '@wordpress/components';
+import { PanelBody, TextControl, ToggleControl, ColorPicker } from '@wordpress/components';
 
 /**
  * Imports the useEffect React Hook. This is used to set an attribute when the
@@ -49,7 +49,7 @@ import { useEffect } from 'react';
  * @return {Element} Element to render.
  */
 export default function Edit( { attributes, setAttributes } ) {
-	const { fallbackCurrentYear, showStartingYear, startingYear } = attributes;
+	const { fallbackCurrentYear, showStartingYear, startingYear, containerBg, containerColor } = attributes;
 
 	// Get the current year and make sure it's a string.
 	const currentYear = new Date().getFullYear().toString();
@@ -76,6 +76,32 @@ export default function Edit( { attributes, setAttributes } ) {
 			<InspectorControls>
 				<PanelBody title={ __( 'Settings', 'copyright-year-block' ) }>
 
+					<ColorPicker
+						label={ __(
+							'Container Background Color',
+							'copyright-year-block'
+						) }
+						color={containerBg}
+						onChange={
+							( value ) => setAttributes( { containerBg: value } )
+						}
+						enableAlpha={false}
+						defaultValue="#000"
+					/>
+
+					<ColorPicker
+						label={ __(
+							'Container Color',
+							'copyright-year-block'
+						) }
+						color={containerColor}
+						onChange={
+							( value ) => setAttributes( { containerColor: value } )
+						}
+						enableAlpha={false}
+						defaultValue="#fff"
+					/>
+
 					<ToggleControl
 						checked={ showStartingYear }
 						label={ __(
@@ -88,6 +114,7 @@ export default function Edit( { attributes, setAttributes } ) {
 							} )
 						}
 					/>
+
 					{ showStartingYear && (
 						<TextControl
 							label={ __(
@@ -104,8 +131,8 @@ export default function Edit( { attributes, setAttributes } ) {
 				</PanelBody>
 			</InspectorControls>
 
-			<div className="hello-1">
-				<p { ...useBlockProps() }>© { displayDate }</p>
+			<div className="hello-1" style={{background: containerBg }}>
+				<p { ...useBlockProps() } style={{ color: containerColor }}>© { displayDate }</p>
 			</div>
 		</>
 	);
