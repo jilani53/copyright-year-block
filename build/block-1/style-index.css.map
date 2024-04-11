@@ -1,0 +1,1 @@
+{"version":3,"file":"block-1/style-index.css","mappings":";;;AAAA;IACI,0BAA0B;AAC9B;;AAEA;IACI,sBAAsB;AAC1B,C","sources":["webpack://copyright-year-block/./src/block-1/style.css"],"sourcesContent":[".hello {\r\n    background: red !important;\r\n}\r\n\r\n.hello p{\r\n    color: #fff !important;\r\n}"],"names":[],"sourceRoot":""}
