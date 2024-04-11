@@ -28,7 +28,7 @@ $current_year = date( "Y" );
 		$display_date = $current_year;
 	} ?>
 
-	<div class="hello">
+	<div class="hello-1">
 		<p <?php echo get_block_wrapper_attributes() ?>>© <?php echo esc_html( $display_date ) ?></p>
 	</div>
 

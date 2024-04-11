@@ -1,7 +1,7 @@
-.hello {
-    background: red !important;
+.hello-1 {
+    background: green !important;
 }
 
-.hello p{
+.hello-1 p{
     color: #fff !important;
 }

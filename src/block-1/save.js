@@ -37,5 +37,5 @@ export default function save( { attributes } ) {
 		displayDate = fallbackCurrentYear;
 	}
 
-	return <div className="hello"><p { ...useBlockProps.save() }>© { displayDate }</p></div>;
+	return <div className="hello-1"><p { ...useBlockProps.save() }>© { displayDate }</p></div>;
 }

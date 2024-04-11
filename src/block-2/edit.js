@@ -104,7 +104,7 @@ export default function Edit( { attributes, setAttributes } ) {
 				</PanelBody>
 			</InspectorControls>
 
-			<div className="hello">
+			<div className="hello-2">
 				<p { ...useBlockProps() }>© { displayDate }</p>
 			</div>
 		</>

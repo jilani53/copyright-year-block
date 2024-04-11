@@ -116,7 +116,7 @@ function Edit({
       startingYear: value
     })
   }))), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
-    className: "hello"
+    className: "hello-1"
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("p", {
     ...(0,_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.useBlockProps)()
   }, "\xA9 ", displayDate)));
@@ -246,7 +246,7 @@ function save({
     displayDate = fallbackCurrentYear;
   }
   return (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
-    className: "hello"
+    className: "hello-1"
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("p", {
     ..._wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1__.useBlockProps.save()
   }, "\xA9 ", displayDate));
